@@ -17,12 +17,11 @@
 # different out devices - console, mongo collection etc.
 
 ###
-
-  # Commented out for Meteor usage
-
-require = if Npm? then Npm.require else require
-_ = require 'underscore'
 ###
+
+if not Meteor?
+  _ = require 'underscore'
+
 
 # ### Constants and common definitions
 Observatory = Observatory ? {}
@@ -69,14 +68,14 @@ _.extend Observatory,
   setSettings: (s)->
     if s.maxSeverity?
       @settings.maxSeverity = s.maxSeverity
-    else 
+    else
       if s.logLevel? then @settings.maxSeverity = s.logLevel
     @emitters.Toolbox?.maxSeverity = @settings.maxSeverity
     if s.printToConsole? and (s.printToConsole isnt @settings.printToConsole)
       @settings.printToConsole = s.printToConsole
       if s.printToConsole is true then @subscribeLogger @_consoleLogger else @unsubscribeLogger @_consoleLogger
-  
-  # Returns default logger to use in the app via warn(), debug() etc calls
+
+# Returns default logger to use in the app via warn(), debug() etc calls
   getDefaultLogger: -> @_defaultEmitter
   getToolbox: -> @_defaultEmitter
 
@@ -140,7 +139,7 @@ class Observatory.MessageEmitter
   _loggers = [] # array of subscribing loggers
 
   _getLoggers: -> @_loggers
-  
+
   constructor: (@name, @formatter)->
     #console.log "MessageEmitter::constructor #{name}"
     @_loggers = []

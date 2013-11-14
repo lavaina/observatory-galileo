@@ -1,11 +1,10 @@
-###
+# Commented out for Meteor usage
 
-  # Commented out for Meteor usage
-
-if require?
+if not Meteor?
   Observatory = (require './Observatory.coffee').Observatory
   {MessageEmitter, GenericEmitter, Logger, ConsoleLogger, LOGLEVEL} = Observatory
-###
+
+
 
 # ### Constants and common definitions
 Observatory = Observatory ? {}
