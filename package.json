@@ -1,0 +1,29 @@
+{
+  "name": " observatory-galileo",
+  "version": "0.4.0",
+  "dependencies": {
+  "underscore": "*",
+  "coffee-script": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*"
+  },
+  "scripts": {
+    "test": "cake test"
+  },
+  "description": "Observatory: Galileo. Foundational classes for the Observatory suite (http://observatoryjs.com). Meteor-independent.",
+  "keywords": [
+    "logging",
+    "log",
+    "logger"
+  ],
+  "engines": {
+  "node": ">= 0.8.x",
+  "npm": ">= 1.1.x"
+  },
+  "repository": {
+  "type": "git",
+  "url": "git://github.com/lavaina/observatory-galileo.git"
+  }
+}
