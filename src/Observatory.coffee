@@ -279,14 +279,14 @@ class Observatory.GenericEmitter extends Observatory.MessageEmitter
 # Basic logger to the console, without any fancy stuff
 class Observatory.ConsoleLogger extends Observatory.Logger
   # Simply redefining log() to output messages to the console
-  log: (m)-> console.log @formatter m
-
-  # ignoring any buffering requests
-  addMessage: (message, useBuffer)->
-    #console.log "addMessage() called for message:"
-    #console.log message
-    throw new Error "Unacceptable message format in logger: #{@name}" if not @messageAcceptable message
-    @log message
+  log: (m)->
+    formattedMessage = @formatter m
+    logger = switch
+      when m.severity is 0 or m.severity is 1 then console.error formattedMessage
+      when m.severity is 2 then console.warn formattedMessage
+      when m.severity is 3 then console.info formattedMessage
+      when m.severity is 4 or m.severity is 5 then console.debug formattedMessage
+      else throw Error("Undefined log level")
 
 
 (exports ? this).Observatory = Observatory
