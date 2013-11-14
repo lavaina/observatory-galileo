@@ -34,10 +34,10 @@ _.extend Observatory,
     ERROR: 1
     WARNING: 2
     INFO: 3
-    VERBOSE: 4
-    DEBUG: 5
+    DEBUG: 4
+    VERBOSE: 5
     MAX: 6
-    NAMES: ["FATAL", "ERROR", "WARNING", "INFO", "VERBOSE", "DEBUG", "MAX"]
+    NAMES: ["FATAL", "ERROR", "WARNING", "INFO", "DEBUG", "VERBOSE", "MAX"]
 
   settings:
     maxSeverity: 3
