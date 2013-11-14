@@ -174,12 +174,12 @@ describe 'Observatory - centralized code and functions', ->
         goodm = timestamp: dt, severity: 0, textMessage: 'error', isServer: true, object: {a: 'a', b: 1}
         l.messageAcceptable(goodm).should.be.true
         # ugly hack for spying on the console
-        cc = console.log
+        cc = console.error
         tmp = ''
-        console.log = (m)-> tmp = m
+        console.error = (m)-> tmp = m
         (-> l.addMessage(goodm)).should.not.throw Error
         tmp.should.equal '[4/6/2013][22:0:0.0][SERVER][][FATAL] error | {"a":"a","b":1}'
-        console.log = cc
+        console.error = cc
 
 
 
@@ -205,7 +205,6 @@ describe 'Observatory - centralized code and functions', ->
               dl.trace e, 'tests'
 
             ###
-
 
 
 
