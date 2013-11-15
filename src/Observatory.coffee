@@ -19,8 +19,8 @@
 ###
 ###
 
-if not Meteor?
-  _ = require 'underscore'
+#if not Meteor?
+#  _ = require 'underscore'
 
 
 # ### Constants and common definitions
