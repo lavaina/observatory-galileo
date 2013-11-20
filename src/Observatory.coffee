@@ -18,15 +18,13 @@
 
 ###
 ###
-
-if not Meteor?
-  _ = require 'underscore'
-
+_wrapper = {}
+_wrapper._ = if not Meteor? then require 'underscore' else _
 
 # ### Constants and common definitions
 Observatory = Observatory ? {}
 
-_.extend Observatory,
+_wrapper._.extend Observatory,
   # Log level (severity) definitions
   LOGLEVEL:
     SILENT: -1
