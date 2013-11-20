@@ -2,8 +2,9 @@
   "name": " observatory-galileo",
   "version": "0.4.0",
   "dependencies": {
-  "underscore": "*",
-  "coffee-script": "*"
+    "underscore": "*",
+    "coffee-script": "*",
+    "chai": "~1.8.1"
   },
   "devDependencies": {
     "mocha": "*",
@@ -19,11 +20,11 @@
     "logger"
   ],
   "engines": {
-  "node": ">= 0.8.x",
-  "npm": ">= 1.1.x"
+    "node": ">= 0.8.x",
+    "npm": ">= 1.1.x"
   },
   "repository": {
-  "type": "git",
-  "url": "git://github.com/lavaina/observatory-galileo.git"
+    "type": "git",
+    "url": "git://github.com/lavaina/observatory-galileo.git"
   }
 }

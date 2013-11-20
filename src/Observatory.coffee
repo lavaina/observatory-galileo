@@ -19,14 +19,7 @@
 ###
 ###
 _wrapper = {}
-#if not Meteor?
-#  console.info "Not running in Meteor: Adding require and underscore"
-#  _wrapper.require = if Npm? then Npm.require else require
-#  _ = _wrapper.require 'underscore'
-
-
-_wrapper.require = if Npm? then Npm.require else require?
-_wrapper._ = if _wrapper?.require then _wrapper.require 'underscore' else _
+_wrapper._ = if not Meteor? then require 'underscore' else _
 
 # ### Constants and common definitions
 Observatory = Observatory ? {}
